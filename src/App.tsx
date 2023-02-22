@@ -1,13 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CustomNavbar from './component/CustomNavbar';
-import Home from './component/Home';
+import AboutMe from './component/AboutMe';
 
 const App:React.FC = () => {
   return (
     <div>
       <CustomNavbar/>
-      <Home/>
+      <AboutMe/>
     </div>
   );
 }
