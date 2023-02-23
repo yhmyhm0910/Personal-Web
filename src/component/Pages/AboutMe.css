@@ -1,0 +1,51 @@
+.aboutMe {
+    width: 100%;
+}
+.coverimg {
+    margin-top: 64.4px;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 10px;
+}
+.grid .abstract {
+    background-color: #efefef;
+    grid-column: span 1;
+    margin-top: -20%;
+    margin-left: 3%;
+}
+.grid .abstract .PicDiv {
+    text-align: center;
+}
+.grid .abstract .PicDiv .myPic {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;   /*Photo also center*/
+    width: 90%;
+}
+.grid .abstract .description span:hover {
+    font-family: 'Times New Roman', Times, serif;
+}
+.grid .abstract .description {
+    margin-top: -3%;
+    margin-left: 5%;
+    display: inline-block;  /*set div size to fit content only*/
+}
+.grid .abstract .description .verified .blueTick {
+    vertical-align:-0.1875em    /*Keep SVG and text on same line*/
+}
+.grid .userName {
+    font-size: 1.5rem;
+}
+.grid .email {
+    font-size: 1.25rem;
+}
+.grid .details {
+    background-color: blanchedalmond;
+    grid-column: span 1;
+    margin-top: 3%;
+}

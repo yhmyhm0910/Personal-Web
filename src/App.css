@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.layout {
+    width: 100%;
+}
+
+header {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 64.4px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    align-items: center;
+    position: fixed;
+    background-color: cornflowerblue;
+}
+
+.companyImage {
+    display: flex;
+    position: relative;
+    left: 1em;
+    height: 45px;
+}
+
+ul {
+    list-style-type: none; /*no dot before every line*/
+    margin-left: 5em;
+    padding: 0;
+}
+
+li {
+    float: left;    /*left to right instead of up to down*/
+}
+li a {
+    font-size: 1.25rem;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 21px 16px;     /*x-height y-width*/
+    text-decoration: none;
+}
+li a:hover {
+    background-color: aqua;
+}
