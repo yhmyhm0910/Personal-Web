@@ -2,14 +2,17 @@ html, body {
     height: 100%;
     margin: 0;
 }
-
-.layout {
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+.maincontent { /*global to every page's content*/
+    position: relative;
     width: 100%;
 }
-
-header {
+.header {
     display: flex;
-    position: absolute;
+    justify-content: space-between;
     right: 0;
     height: 64.4px;
     width: 100%;
@@ -17,8 +20,12 @@ header {
     top: 0;
     z-index: 200;
     align-items: center;
-    position: fixed;
-    background-color: cornflowerblue;
+    position: relative;
+    background-color: aqua;
+    
+}
+.menubtn {
+    display: none;
 }
 
 .companyImage {
@@ -30,8 +37,9 @@ header {
 
 ul {
     list-style-type: none; /*no dot before every line*/
-    margin-left: 5em;
-    padding: 0;
+    margin-left: 50px;
+    float: right;
+    margin: 0;
 }
 
 li {
@@ -43,8 +51,21 @@ li a {
     color: black;
     text-align: center;
     padding: 21px 16px;     /*x-height y-width*/
-    text-decoration: none;
+    text-decoration: none;  /*Remove Default Hyperlink display format*/
+    text-transform: uppercase;
 }
 li a:hover {
-    background-color: aqua;
+    background-color: red;
+}
+
+@media (orientation: portrait) {   /*Must under the defined*/
+    div.header {
+        background-color: rgb(76, 65, 65);
+    }
+    .menubtn {
+        display: flex;
+    }
+    li {
+        display: none;
+    }
 }

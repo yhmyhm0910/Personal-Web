@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AboutMe.css'
-import CheckCircle, { AdminUser, UserInfos, firstUser } from '../Constants'
+import { AdminUser, UserInfos } from '../Constants'
+import CheckCircle from '../img/svg/CheckCircle'
 
 const AboutMe:React.FC = () => {
 
@@ -13,8 +14,35 @@ const AboutMe:React.FC = () => {
         }
     }
 
-  return (
-    <div className='aboutMe'> {/*fluid = 100% width*/}
+    const myInfos: {id: number, title: string, body:string, shown: boolean}[] = [
+        {
+            id: 1,
+            title: 'hobby',
+            body: 'These are my hobbies',
+            shown: false
+        },
+        {
+            id: 2,
+            title: 'links',
+            body: 'These are my links',
+            shown: false
+        }
+    ]
+
+    const [infos, setInfos] = useState(myInfos)
+    
+    const handleExpandClick = (idPassed: number) => {
+        setInfos(
+            infos.map((info) => 
+                info.id === idPassed
+                ?{...info, shown: !info.shown}  //? == if (last statement) is true
+                :{...info}  //: == else 
+            )
+        )
+    }
+
+ return (
+    <div className='maincontent'>
         <div>
             <img className='coverimg' src={require('../img/coverimg.jpeg')} alt='Cover'/>
         </div>
@@ -35,7 +63,17 @@ const AboutMe:React.FC = () => {
                 
             </div>
             <div className='details'>
-                Infossssss
+                This is my first page.
+                <div className="dropdown">
+                    {
+                        infos.map((info) => (
+                            <div key={info.id}>
+                                <button style={{marginTop: '1rem'}} onClick={() => {handleExpandClick(info.id)}}>{info.title}</button>
+                                <div className={info.shown? 'dropdown-info-visible':'dropdown-info-invisible'}>{info.body}</div>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     </div>
